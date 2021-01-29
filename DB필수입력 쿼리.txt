@@ -1,26 +1,18 @@
 create database erp;
-
 use mysql;
 delete from mysql.user where User ='admin';
 delete from mysql.db where User ='admin';
 FLUSH PRIVILEGES;
-
-
 /* 원격접속용 계정 */
 create user '%'@localhost identified by 'Admin1234!@';
 grant create, drop, select, insert, delete, update on erp.* to 'admin'@'%';
 /* 원격접속용 계정 */
-
 /* 로컬접속용 계정 */
 create user 'admin'@localhost identified by 'admin';
 grant create, drop, select, insert, delete, update on erp.* to 'admin'@'localhost';
 /* 로컬접속용 계정 */
-
-
 FLUSH PRIVILEGES;
 use erp;
-
-
 create table attendance(
 attend_id int not null auto_increment primary key, 
 attend_workdate char(10), 
@@ -31,12 +23,9 @@ attend_overtime int,
 attend_totaltime int,
 attend_late char(1), 
 attend_workplace char(1) default 'Y', 
-
 attend_status int,
-
 emp_id_fk int not null
 );
-
 CREATE TABLE board(
 board_id int not null auto_increment primary key,
 board_department char(3) not null,
@@ -52,7 +41,6 @@ board_comment char(1),
 board_down char(1),
 board_move varchar(5) not null
 );
-
 INSERT INTO board SET 
 board_department = '999',
 board_code = 'com',
@@ -66,7 +54,6 @@ board_write = 0,
 board_comment = 0,
 board_down = 0,
 board_move = '9991';
-
 INSERT INTO board SET 
 board_department = '999',
 board_code = 'sys',
@@ -80,7 +67,6 @@ board_write = 0,
 board_comment = 0,
 board_down = 0,
 board_move = '9992';
-
 INSERT INTO board SET 
 board_department = '999',
 board_code = 'notice',
@@ -94,7 +80,6 @@ board_write = 0,
 board_comment = 0,
 board_down = 0,
 board_move = '9993';
-
 INSERT INTO board SET 
 board_department = '999',
 board_code = 'QnA',
@@ -108,7 +93,6 @@ board_write = 0,
 board_comment = 0,
 board_down = 0,
 board_move = '9994';
-
 INSERT INTO board SET 
 board_department = '000',
 board_code = 'notice',
@@ -122,7 +106,6 @@ board_write = 1,
 board_comment = 1,
 board_down = 1,
 board_move = '0001';
-
 INSERT INTO board SET 
 board_department = '100',
 board_code = 'notice',
@@ -136,7 +119,6 @@ board_write = 1,
 board_comment = 1,
 board_down = 1,
 board_move = '1001';
-
 INSERT INTO board SET 
 board_department = '200',
 board_code = 'notice',
@@ -150,7 +132,6 @@ board_write = 1,
 board_comment = 1,
 board_down = 1,
 board_move = '2001';
-
 INSERT INTO board SET 
 board_department = '300',
 board_code = 'notice',
@@ -164,7 +145,6 @@ board_write = 1,
 board_comment = 1,
 board_down = 1,
 board_move = '3001';
-
 INSERT INTO board SET 
 board_department = '400',
 board_code = 'notice',
@@ -178,7 +158,6 @@ board_write = 1,
 board_comment = 1,
 board_down = 1,
 board_move = '4001';
-
 INSERT INTO board SET 
 board_department = '500',
 board_code = 'notice',
@@ -192,7 +171,6 @@ board_write = 1,
 board_comment = 1,
 board_down = 1,
 board_move = '5001';
-
 INSERT INTO board SET 
 board_department = '600',
 board_code = 'notice',
@@ -206,7 +184,6 @@ board_write = 1,
 board_comment = 1,
 board_down = 1,
 board_move = '6001';
-
 INSERT INTO board SET 
 board_department = '700',
 board_code = 'notice',
@@ -220,7 +197,6 @@ board_write = 1,
 board_comment = 1,
 board_down = 1,
 board_move = '7001';
-
 INSERT INTO board SET 
 board_department = '800',
 board_code = 'notice',
@@ -234,7 +210,6 @@ board_write = 1,
 board_comment = 1,
 board_down = 1,
 board_move = '8001';
-
 INSERT INTO board SET 
 board_department = '900',
 board_code = 'notice',
@@ -248,7 +223,6 @@ board_write = 1,
 board_comment = 1,
 board_down = 1,
 board_move = '9001';
-
 CREATE TABLE board_article_999com
 (aid int not null auto_increment primary key,
 division char(1),
@@ -263,7 +237,6 @@ fileUrl varchar(500),
 emp_id_fk int,
 comment_hit int,
 secret char(1));
-
 CREATE TABLE board_article_999sys
 (aid int not null auto_increment primary key,
 division char(1),
@@ -278,7 +251,6 @@ fileUrl varchar(500),
 emp_id_fk int,
 comment_hit int,
 secret char(1));
-
 CREATE TABLE board_article_999notice
 (aid int not null auto_increment primary key,
 division char(1),
@@ -293,7 +265,6 @@ fileUrl varchar(500),
 emp_id_fk int,
 comment_hit int,
 secret char(1));
-
 CREATE TABLE board_article_999QnA
 (aid int not null auto_increment primary key,
 division char(1),
@@ -308,7 +279,6 @@ fileUrl varchar(500),
 emp_id_fk int,
 comment_hit int,
 secret char(1));
-
 CREATE TABLE board_article_000notice
 (aid int not null auto_increment primary key,
 division char(1),
@@ -323,7 +293,6 @@ fileUrl varchar(500),
 emp_id_fk int,
 comment_hit int,
 secret char(1));
-
 CREATE TABLE board_article_100notice
 (aid int not null auto_increment primary key,
 division char(1),
@@ -338,7 +307,6 @@ fileUrl varchar(500),
 emp_id_fk int,
 comment_hit int,
 secret char(1));
-
 CREATE TABLE board_article_200notice
 (aid int not null auto_increment primary key,
 division char(1),
@@ -353,7 +321,6 @@ fileUrl varchar(500),
 emp_id_fk int,
 comment_hit int,
 secret char(1));
-
 CREATE TABLE board_article_300notice
 (aid int not null auto_increment primary key,
 division char(1),
@@ -368,7 +335,6 @@ fileUrl varchar(500),
 emp_id_fk int,
 comment_hit int,
 secret char(1));
-
 CREATE TABLE board_article_400notice
 (aid int not null auto_increment primary key,
 division char(1),
@@ -383,7 +349,6 @@ fileUrl varchar(500),
 emp_id_fk int,
 comment_hit int,
 secret char(1));
-
 CREATE TABLE board_article_500notice
 (aid int not null auto_increment primary key,
 division char(1),
@@ -398,7 +363,6 @@ fileUrl varchar(500),
 emp_id_fk int,
 comment_hit int,
 secret char(1));
-
 CREATE TABLE board_article_600notice
 (aid int not null auto_increment primary key,
 division char(1),
@@ -413,7 +377,6 @@ fileUrl varchar(500),
 emp_id_fk int,
 comment_hit int,
 secret char(1));
-
 CREATE TABLE board_article_700notice
 (aid int not null auto_increment primary key,
 division char(1),
@@ -428,7 +391,6 @@ fileUrl varchar(500),
 emp_id_fk int,
 comment_hit int,
 secret char(1));
-
 CREATE TABLE board_article_800notice
 (aid int not null auto_increment primary key,
 division char(1),
@@ -443,7 +405,6 @@ fileUrl varchar(500),
 emp_id_fk int,
 comment_hit int,
 secret char(1));
-
 CREATE TABLE board_article_900notice
 (aid int not null auto_increment primary key,
 division char(1),
@@ -458,7 +419,6 @@ fileUrl varchar(500),
 emp_id_fk int,
 comment_hit int,
 secret char(1));
-
 CREATE TABLE board_comment_999com
 (cid int not null auto_increment primary key,
 aid_fk int not null,
@@ -470,7 +430,6 @@ re_cid int,
 re_cid_name varchar(20),
 re_cid_depart varchar(20),
 re_regdate datetime);
-
 CREATE TABLE board_comment_999sys
 (cid int not null auto_increment primary key,
 aid_fk int not null,
@@ -482,7 +441,6 @@ re_cid int,
 re_cid_name varchar(20),
 re_cid_depart varchar(20),
 re_regdate datetime);
-
 CREATE TABLE board_comment_999notice
 (cid int not null auto_increment primary key,
 aid_fk int not null,
@@ -494,7 +452,6 @@ re_cid int,
 re_cid_name varchar(20),
 re_cid_depart varchar(20),
 re_regdate datetime);
-
 CREATE TABLE board_comment_999QnA
 (cid int not null auto_increment primary key,
 aid_fk int not null,
@@ -506,7 +463,6 @@ re_cid int,
 re_cid_name varchar(20),
 re_cid_depart varchar(20),
 re_regdate datetime);
-
 CREATE TABLE board_comment_000notice
 (cid int not null auto_increment primary key,
 aid_fk int not null,
@@ -518,7 +474,6 @@ re_cid int,
 re_cid_name varchar(20),
 re_cid_depart varchar(20),
 re_regdate datetime);
-
 CREATE TABLE board_comment_100notice
 (cid int not null auto_increment primary key,
 aid_fk int not null,
@@ -530,7 +485,6 @@ re_cid int,
 re_cid_name varchar(20),
 re_cid_depart varchar(20),
 re_regdate datetime);
-
 CREATE TABLE board_comment_200notice
 (cid int not null auto_increment primary key,
 aid_fk int not null,
@@ -542,7 +496,6 @@ re_cid int,
 re_cid_name varchar(20),
 re_cid_depart varchar(20),
 re_regdate datetime);
-
 CREATE TABLE board_comment_300notice
 (cid int not null auto_increment primary key,
 aid_fk int not null,
@@ -554,7 +507,6 @@ re_cid int,
 re_cid_name varchar(20),
 re_cid_depart varchar(20),
 re_regdate datetime);
-
 CREATE TABLE board_comment_400notice
 (cid int not null auto_increment primary key,
 aid_fk int not null,
@@ -566,7 +518,6 @@ re_cid int,
 re_cid_name varchar(20),
 re_cid_depart varchar(20),
 re_regdate datetime);
-
 CREATE TABLE board_comment_500notice
 (cid int not null auto_increment primary key,
 aid_fk int not null,
@@ -578,7 +529,6 @@ re_cid int,
 re_cid_name varchar(20),
 re_cid_depart varchar(20),
 re_regdate datetime);
-
 CREATE TABLE board_comment_600notice
 (cid int not null auto_increment primary key,
 aid_fk int not null,
@@ -590,7 +540,6 @@ re_cid int,
 re_cid_name varchar(20),
 re_cid_depart varchar(20),
 re_regdate datetime);
-
 CREATE TABLE board_comment_700notice
 (cid int not null auto_increment primary key,
 aid_fk int not null,
@@ -602,7 +551,6 @@ re_cid int,
 re_cid_name varchar(20),
 re_cid_depart varchar(20),
 re_regdate datetime);
-
 CREATE TABLE board_comment_800notice
 (cid int not null auto_increment primary key,
 aid_fk int not null,
@@ -614,7 +562,6 @@ re_cid int,
 re_cid_name varchar(20),
 re_cid_depart varchar(20),
 re_regdate datetime);
-
 CREATE TABLE board_comment_900notice
 (cid int not null auto_increment primary key,
 aid_fk int not null,
@@ -626,7 +573,6 @@ re_cid int,
 re_cid_name varchar(20),
 re_cid_depart varchar(20),
 re_regdate datetime);
-
 create table client (
 client_id int not null auto_increment primary key,
 client_code varchar(10) not null,
@@ -650,12 +596,10 @@ client_res_email varchar(50) not null,
 client_payment_type varchar(20) not null,
 client_handling varchar(50) not null,
 client_note varchar(100) not null,
-
 client_tax_email varchar(50) not null,
 client_tax_responsibility varchar(15) not null,
 client_tax_company_phone varchar(12) not null
 );
-
 create table company(
  com_num char(12),
  com_name varchar(20),
@@ -711,7 +655,6 @@ com_web_menu_url = '/erp/companyInfo;/erp/erpInfo;https://github.com/TaeJooLim/P
  com_web_top = 'BLUE ERP',
  com_web_bottom = 'blue erp system',
  com_web_copyright = 'Copyright 2020. (김진희, 박민정, 윤가희, 임태주) all rights reserved.';
-
 create table contract (
 cont_id int not null auto_increment primary key,
 cont_doc_num varchar(30) not null,
@@ -728,10 +671,8 @@ cont_client_res_email varchar(50) not null,
 cont_orderDate char(10) not null,
 cont_dueDate char(10) not null,
 cont_note varchar(255),
-
 client_license_num_fk char(12)
 );
-
 create table contract_detail(
 contD_id int auto_increment not null primary key,
 contD_doc_num_fk varchar(30) not null,
@@ -742,8 +683,6 @@ contD_p_sell int not null,
 contD_vat char(3),
 p_id_fk int not null 
 );
-
-
 create table corp_car(
     car_id int not null auto_increment primary key,
     car_model varchar(20) not null,
@@ -759,7 +698,6 @@ create table corp_car(
     car_inspection varchar(10),
     car_total_mileage int
 );
-
 create table corp_car_log(
     car_pid int not null auto_increment primary key,
     car_drive_date varchar(10) not null,
@@ -775,16 +713,12 @@ create table corp_car_log(
     car_fuel varchar(20),
     car_fuel_amount int,
     car_remark varchar(200),
-
     car_id_fk int not null
 );
-
-
 create table department (
 depart_code char(3),
 depart_name varchar(20)
 );
-
 insert into department SET depart_code='000', depart_name='중앙부서';
 insert into department SET depart_code='100', depart_name='인사과';
 insert into department SET depart_code='200', depart_name='경영과';
@@ -795,8 +729,6 @@ insert into department SET depart_code='600', depart_name='지원과';
 insert into department SET depart_code='700', depart_name='영업과';
 insert into department SET depart_code='800', depart_name='마케팅과';
 insert into department SET depart_code='900', depart_name='생산과';
-
-
 create table employee(
 emp_id int not null auto_increment primary key,
 emp_department char(3) not null,
@@ -813,12 +745,10 @@ emp_step int,
 emp_auth int default 1,
 emp_confirm char(1) default 'N',
 emp_photo varchar(255),
-
 emp_off_total double,
 emp_off_use double default 0, 
 emp_off_remain double 
 );
-
 INSERT INTO employee SET 
    emp_department = 'ad', 
    emp_position = 'ad', 
@@ -831,7 +761,247 @@ INSERT INTO employee SET
    emp_regdate = now(), 
    emp_auth = 10, 
    emp_confirm = 'Y';
-
+   
+   INSERT INTO employee SET 
+emp_department = '200',
+emp_position = '04',
+emp_num ='14072002',
+emp_enter = '2014-07-14',
+emp_name = '박과장',
+emp_birth = '1990-03-14',
+emp_password = '1234',
+emp_email = 'park@blue.com',
+emp_regdate = now(), 
+emp_off_total = 78, 
+emp_off_remain = 70.25, 
+emp_off_use = 7.75, 
+ emp_confirm = 'Y', 
+emp_step = 7 ;
+INSERT INTO employee SET 
+emp_department = '100',
+emp_position = '02',
+emp_num ='20121003',
+emp_enter = '2020-12-22',
+emp_name = '전주임',
+emp_birth = '1990-03-14',
+emp_password = '1234',
+emp_email = 'abc@email.com',
+ emp_off_total = 1, 
+emp_off_remain = 1, 
+emp_off_use = 0, 
+emp_regdate = now(), 
+ emp_confirm = 'Y',
+emp_step = 1 ;
+INSERT INTO employee SET 
+emp_department = '300',
+emp_position = '03',
+emp_num ='19083004',
+emp_enter = '2019-08-31',
+emp_name = '김대리', 
+emp_birth = '1989-10-04',
+emp_password = '1234',
+emp_email = 'kim@blue.com', 
+emp_off_total = 17, 
+emp_off_remain = 14.5, 
+emp_off_use = 2.5, 
+ emp_confirm = 'Y', 
+emp_step = 2, 
+emp_regdate = now();
+INSERT INTO employee SET 
+emp_department = '400',
+emp_position = '07',
+emp_num ='05094005',
+emp_enter = '2019-09-21',
+emp_name = '강이사',
+emp_birth = '1977-11-04',
+emp_password = '1234',
+emp_email = 'kang@blue.com',
+emp_regdate = now(), 
+emp_step = 2,  
+ emp_off_total = 16, 
+emp_off_remain = 16, 
+emp_off_use = 0, 
+emp_confirm = 'Y';
+INSERT INTO employee SET 
+emp_department = '500',
+emp_position = '01',
+emp_num ='20095006',
+emp_enter = '2020-01-10',
+emp_name = '신사원',
+emp_birth = '1999-11-05',
+emp_password = '1234',
+emp_email = 'shin@blue.com', 
+emp_step = 1, 
+ emp_off_total = 12, 
+emp_off_remain = 12, 
+emp_off_use = 0, 
+ emp_confirm = 'Y',
+emp_regdate = now();
+INSERT INTO employee SET 
+emp_department = '600',
+emp_position = '08',
+emp_num ='02046007',
+emp_enter = '2002-04-10',
+emp_name = '정상무',
+emp_birth = '1972-05-05',
+emp_password = '1234',
+emp_email = 'jeong@blue.com', 
+emp_step = 19, 
+ emp_off_total = 225, 
+emp_off_remain = 225, 
+emp_off_use = 0, 
+ emp_confirm = 'Y',
+emp_regdate = now();
+INSERT INTO employee SET 
+emp_department = '800',
+emp_position = '01',
+emp_num ='20116008',
+emp_enter = '2020-11-10',
+emp_name = '하사원',
+emp_birth = '2000-10-05',
+emp_password = '1234',
+emp_email = 'ha@blue.com', 
+emp_step = 1, 
+ emp_off_total = 2, 
+emp_off_remain = 2, 
+emp_off_use = 0, 
+ emp_confirm = 'Y',
+emp_regdate = now();
+INSERT INTO employee SET 
+emp_department = '900',
+emp_position = '10',
+emp_num ='01019009',
+emp_enter = '2001-01-01',
+emp_name = '부사장',
+emp_birth = '2000-10-05',
+emp_password = '1234',
+emp_email = 'bu@blue.com',
+emp_step = 20, 
+ emp_off_total = 240, 
+emp_off_remain = 240, 
+emp_off_use = 0, 
+ emp_confirm = 'Y',
+emp_regdate = now();
+INSERT INTO employee SET 
+emp_department = '700',
+emp_position = '06',
+emp_num ='100770010',
+emp_enter = '2010-07-21',
+emp_name = '위부장',
+emp_birth = '1975-10-22',
+emp_password = '1234',
+emp_email = 'wee@blue.com', 
+emp_step = 11, 
+ emp_off_total = 126, 
+emp_off_remain = 126, 
+emp_off_use = 0, 
+ emp_confirm = 'Y',
+emp_regdate = now();
+INSERT INTO employee SET 
+emp_department = '000',
+emp_position = '05',
+emp_num ='140200011',
+emp_enter = '2014-02-04',
+emp_name = '민차장',
+emp_birth = '1981-06-22',
+emp_password = '1234',
+emp_email = 'min@blue.com',
+emp_step = 7, 
+ emp_off_total = 83, 
+emp_off_remain = 83, 
+emp_off_use = 0, 
+ emp_confirm = 'Y',
+emp_regdate = now();
+INSERT INTO employee SET 
+emp_department = '400',
+emp_position = '02',
+emp_num ='180540012',
+emp_enter = '2018-05-04',
+emp_name = '김영희',
+emp_birth = '1990-11-22',
+emp_password = '1234',
+emp_step = 3, 
+emp_email = 'yhkim@blue.com', 
+ emp_off_total = 32, 
+emp_off_remain = 32, 
+emp_off_use = 0, 
+ emp_confirm = 'Y',
+emp_regdate = now();
+INSERT INTO employee SET 
+emp_department = '100',
+emp_position = '06',
+emp_num ='120310013',
+emp_enter = '2012-03-05',
+emp_name = '인사부',
+emp_birth = '1978-08-07',
+emp_password = '1234',
+emp_email = 'insa@blue.com',
+emp_off_total = 106, 
+emp_off_remain = 106, 
+emp_off_use = 0, 
+ emp_confirm = 'Y',
+emp_step = 9, 
+emp_regdate = now();
+INSERT INTO employee SET 
+emp_department = '200',
+emp_position = '01',
+emp_num ='200120014',
+emp_enter = '2020-01-01',
+emp_name = '손직원',
+emp_birth = '1995-08-08',
+emp_password = '1234',
+emp_email = 'son@blue.com',
+emp_confirm = 'Y', 
+emp_off_total = 12, 
+emp_off_remain = 7.5, 
+emp_off_use = 4.5, 
+emp_step = 1, 
+emp_regdate = now();
+INSERT INTO employee SET 
+emp_department = '300',
+emp_position = '07',
+emp_num ='200130015',
+emp_enter = '2020-01-01',
+emp_name = '진실로',
+emp_birth = '1977-07-08',
+emp_password = '1234',
+emp_email = 'jin@blue.com',
+emp_off_total = 12, 
+emp_off_remain = 12, 
+emp_off_use = 0, 
+ emp_confirm = 'Y',
+emp_step = 1, 
+emp_regdate = now();
+INSERT INTO employee SET 
+emp_department = '500',
+emp_position = '01',
+emp_num ='200150016',
+emp_enter = '2020-01-01',
+emp_name = '오해영',
+emp_birth = '1993-09-09',
+emp_password = '1234',
+emp_email = 'oh@blue.com',
+emp_confirm = 'Y', 
+emp_off_total = 12, 
+emp_off_remain = 10.5, 
+emp_off_use = 1.5, 
+emp_step = 1, 
+emp_regdate = now();
+INSERT INTO employee SET 
+emp_department = '600',
+emp_position = '01',
+emp_num ='200160017',
+emp_enter = '2020-01-01',
+emp_name = '송사리',
+emp_birth = '1996-01-09',
+emp_password = '1234',
+emp_email = 'song@blue.com',
+emp_confirm = 'Y', 
+emp_off_total = 12, 
+emp_off_remain = 10, 
+emp_off_use = 2, 
+emp_step = 1, 
+emp_regdate = now();
 INSERT INTO employee SET 
 emp_department = '000',
 emp_position = '06',
@@ -845,8 +1015,10 @@ emp_step = 9,
 emp_confirm = 'Y',
 emp_auth = 9,
 emp_headcheck = 'Y',
+emp_off_total = 106,
+emp_off_remain = 106,
+emp_off_use = 0,
 emp_regdate = now();
-
 INSERT INTO employee SET 
 emp_department = '100',
 emp_position = '06',
@@ -860,8 +1032,10 @@ emp_step = 9,
 emp_confirm = 'Y',
 emp_auth = 9,
 emp_headcheck = 'Y',
+emp_off_total = 106,
+emp_off_remain = 106,
+emp_off_use = 0,
 emp_regdate = now();
-
 INSERT INTO employee SET 
 emp_department = '200',
 emp_position = '06',
@@ -875,8 +1049,10 @@ emp_step = 9,
 emp_confirm = 'Y',
 emp_auth = 9,
 emp_headcheck = 'Y',
+emp_off_total = 106,
+emp_off_remain = 106,
+emp_off_use = 0,
 emp_regdate = now();
-
 INSERT INTO employee SET 
 emp_department = '300',
 emp_position = '06',
@@ -890,8 +1066,10 @@ emp_step = 9,
 emp_confirm = 'Y',
 emp_auth = 9,
 emp_headcheck = 'Y',
+emp_off_total = 106,
+emp_off_remain = 106,
+emp_off_use = 0,
 emp_regdate = now();
-
 INSERT INTO employee SET 
 emp_department = '400',
 emp_position = '06',
@@ -905,8 +1083,10 @@ emp_step = 9,
 emp_confirm = 'Y',
 emp_auth = 9,
 emp_headcheck = 'Y',
+emp_off_total = 106,
+emp_off_remain = 106,
+emp_off_use = 0,
 emp_regdate = now();
-
 INSERT INTO employee SET 
 emp_department = '500',
 emp_position = '06',
@@ -920,8 +1100,10 @@ emp_step = 9,
 emp_confirm = 'Y',
 emp_auth = 9,
 emp_headcheck = 'Y',
+emp_off_total = 106,
+emp_off_remain = 106,
+emp_off_use = 0,
 emp_regdate = now();
-
 INSERT INTO employee SET 
 emp_department = '600',
 emp_position = '06',
@@ -935,8 +1117,10 @@ emp_step = 9,
 emp_confirm = 'Y',
 emp_auth = 9,
 emp_headcheck = 'Y',
+emp_off_total = 106,
+emp_off_remain = 106,
+emp_off_use = 0,
 emp_regdate = now();
-
 INSERT INTO employee SET 
 emp_department = '700',
 emp_position = '06',
@@ -950,8 +1134,10 @@ emp_step = 9,
 emp_confirm = 'Y',
 emp_auth = 9,
 emp_headcheck = 'Y',
+emp_off_total = 106,
+emp_off_remain = 106,
+emp_off_use = 0,
 emp_regdate = now();
-
 INSERT INTO employee SET 
 emp_department = '800',
 emp_position = '06',
@@ -965,8 +1151,10 @@ emp_step = 9,
 emp_confirm = 'Y',
 emp_auth = 9,
 emp_headcheck = 'Y',
+emp_off_total = 106,
+emp_off_remain = 106,
+emp_off_use = 0,
 emp_regdate = now();
-
 INSERT INTO employee SET 
 emp_department = '900',
 emp_position = '06',
@@ -980,50 +1168,42 @@ emp_step = 9,
 emp_confirm = 'Y',
 emp_auth = 9,
 emp_headcheck = 'Y',
+emp_off_total = 106,
+emp_off_remain = 106,
+emp_off_use = 0,
 emp_regdate = now();
-
 create table employee_detail (
 emp_company char(2) not null,
 emp_team char(2) not null,
-
 emp_gender char(1) not null,
 emp_CP char(13) not null,
 emp_extension varchar(4),
-
 emp_leader varchar(10) default '-',
 emp_driving char(1),
 emp_carlicense varchar(10),
 emp_mycar char(1),
-
 emp_graduated char(6),
 emp_major varchar(20),
 emp_academy varchar(20),
 emp_reward char(3),
 emp_disability char(3),
-
 emp_army char(4),
 emp_religion char(3),
 emp_married char(2),
-
 emp_license1 varchar(20),
 emp_license2 varchar(20),
 emp_license3 varchar(20),
 emp_lang1 varchar(20),
 emp_lang2 varchar(20),
-
 emp_nation char(3),
 emp_post char(5),
 emp_address varchar(100),
-
 emp_bank varchar(10),
 emp_accountnum varchar(20) not null,
 emp_address_detail varchar(50),
-
 emp_career text,
-
 emp_id_fk int 
 );
-
 create table msg_info (
 msg_id int not null auto_increment primary key,
 msg_send_id_fk int not null, 
@@ -1035,7 +1215,6 @@ msg_confirm char(1) default 'N',
 msg_send_del char(1) default 'N', 
 msg_from_del char(1) default 'N' 
 );
-
 create table order_buy (
 order_id int not null auto_increment primary key,
 order_emp_team varchar(10) not null,
@@ -1049,18 +1228,15 @@ order_total_price int not null,
 order_purpose varchar(254),
 order_doc_num varchar(30) not null, 
 order_subject varchar(20) not null,
-
 order_confirm char(1) default 'N',
 order_confirm_date char(10),
 order_sender int not null,
 order_receiver int 
 );
-
 create table position (
 position_code char(2),
 position_name varchar(20)
 );
-
 insert into position SET position_code='01', position_name='사원';
 insert into position SET position_code='02', position_name='주임';
 insert into position SET position_code='03', position_name='대리';
@@ -1073,28 +1249,21 @@ insert into position SET position_code='09', position_name='전무';
 insert into position SET position_code='10', position_name='부사장';
 insert into position SET position_code='11', position_name='사장';
 insert into position SET position_code='12', position_name='회장';
-
-
 create table process (
 proc_id int not null auto_increment primary key,
 proc_seq int not null,
 proc_name varchar(50) not null,
 proc_workers int not null,
 proc_working_time int not null,
-
 p_id_fk int not null,
 wc_id_fk int not null,
 emp_id_fk int not null
 );
-
 create table process_mtr(
-
 pm_amount int not null,
-
 p_id_fk int not null,
 pm_id_fk int not null
 );
-
 create table produce (
 prod_id int not null auto_increment primary key,
 prod_doc_num_fk varchar(30) not null,
@@ -1109,15 +1278,11 @@ prod_process_name3 varchar(50),
 prod_process_name4 varchar(50), 
 prod_process_name5 varchar(50),
 prod_process_cnt int not null,
-
 prod_p_name varchar(100), 
 prod_p_unit varchar(5), 
 prod_p_amount varchar(5), 
-
 prod_release char(1) default 'N'
 );
-
-
 create table product (
   p_id int not null auto_increment primary key,
   p_type char(1) not null,          
@@ -1137,7 +1302,6 @@ create table product (
   
   account_id_fk int not null       
 );
-
 CREATE TABLE salary (
 sform_id int not null auto_increment primary key,
 salary_date char(7) not null, 
@@ -1158,12 +1322,10 @@ salary_income_fk int,
 salary_l_income_fk int, 
 salary_totalcost_fk int
 );
-
 CREATE TABLE salary_base(
       salary_pay int,
       position_code_fk char(2)
 );
-
 INSERT INTO salary_base SET salary_pay='2100000', position_code_fk='01';
 INSERT INTO salary_base SET salary_pay='2300000', position_code_fk='02';
 INSERT INTO salary_base SET salary_pay='2500000', position_code_fk='03';
@@ -1176,8 +1338,6 @@ INSERT INTO salary_base SET salary_pay='3700000', position_code_fk='09';
 INSERT INTO salary_base SET salary_pay='3900000', position_code_fk='10';
 INSERT INTO salary_base SET salary_pay='4100000', position_code_fk='11';
 INSERT INTO salary_base SET salary_pay='4300000', position_code_fk='12';
-
-
 create table salary_calculation (
 salary_id int auto_increment primary key,
 starting_range int,
@@ -1191,7 +1351,6 @@ salary_income int,
 salary_l_income int, 
 salary_totalcost int
 );
-
 INSERT INTO salary_calculation SET starting_range=1000000, end_range=1100000, net_pay=923500, salary_nps=40500, salary_h_insurance=28080, salary_care=2070, salary_e_insurance=5850, salary_income=0, salary_l_income=0, salary_totalcost=76500;
 INSERT INTO salary_calculation SET starting_range=1100000, end_range=1200000, net_pay=1013810, salary_nps=45000, salary_h_insurance=31200, salary_care=2300, salary_e_insurance=6500, salary_income=1090, salary_l_income=100, salary_totalcost=86190;
 INSERT INTO salary_calculation SET starting_range=1200000, end_range=1300000, net_pay=1103640, salary_nps=49500, salary_h_insurance=34320, salary_care=2530, salary_e_insurance=7150, salary_income=2600, salary_l_income=260, salary_totalcost=96360;
@@ -1303,8 +1462,6 @@ INSERT INTO salary_calculation SET starting_range=11700000, end_range=11800000, 
 INSERT INTO salary_calculation SET starting_range=11800000, end_range=11900000, net_pay=8269060, salary_nps=526500, salary_h_insurance=365040, salary_care=26930, salary_e_insurance=76050, salary_income=2305840, salary_l_income=230580, salary_totalcost=3530940;
 INSERT INTO salary_calculation SET starting_range=11900000, end_range=12000000, net_pay=8322900, salary_nps=531000, salary_h_insurance=368160, salary_care=27170, salary_e_insurance=76700, salary_income=2340070, salary_l_income=234000, salary_totalcost=3577100;
 INSERT INTO salary_calculation SET starting_range=12000000, end_range=1999999999, net_pay=8376740, salary_nps=535500, salary_h_insurance=371280, salary_care=27400, salary_e_insurance=77350, salary_income=2374300, salary_l_income=237430, salary_totalcost=3623260;
-
-
 create table vacation (
 off_id int not null auto_increment primary key,
 off_startDate char(10) not null,
@@ -1316,10 +1473,8 @@ off_confirm char(1) default 'N',
 off_doc_num varchar(30), 
 off_regdate Date, 
 off_confirm_date Date, 
-
 emp_id_fk int not null
 );
-
 create table workcenter (
 wc_id int not null auto_increment primary key,
 wc_name varchar(20) not null,
@@ -1330,8 +1485,6 @@ wc_post char(5) not null,
 wc_address varchar (100) not null,
 wc_contractFromDate char(10) not null,
 wc_contractToDate char(10) not null,
-
 wc_contract varchar(255),
-
 emp_id_fk int not null
 );
