@@ -831,6 +831,265 @@ INSERT INTO employee SET
    emp_regdate = now(), 
    emp_auth = 10, 
    emp_confirm = 'Y';
+   
+   INSERT INTO employee SET 
+	emp_department = '200',
+	emp_position = '04',
+	emp_num ='14072002',
+	emp_enter = '2014-07-14',
+	emp_name = '박과장',
+	emp_birth = '1990-03-14',
+	emp_password = '1234',
+	emp_email = 'park@blue.com',
+	emp_regdate = now(), 
+	emp_off_total = 78, 
+	emp_off_remain = 70.25, 
+	emp_off_use = 7.75, 
+ emp_confirm = 'Y', 
+	emp_step = 7 ;
+
+INSERT INTO employee SET 
+	emp_department = '100',
+	emp_position = '02',
+	emp_num ='20121003',
+	emp_enter = '2020-12-22',
+	emp_name = '전주임',
+	emp_birth = '1990-03-14',
+	emp_password = '1234',
+	emp_email = 'abc@email.com',
+ emp_off_total = 1, 
+	emp_off_remain = 1, 
+	emp_off_use = 0, 
+	emp_regdate = now(), 
+ emp_confirm = 'Y',
+	emp_step = 1 ;
+
+INSERT INTO employee SET 
+	emp_department = '300',
+	emp_position = '03',
+	emp_num ='19083004',
+	emp_enter = '2019-08-31',
+	emp_name = '김대리', 
+	emp_birth = '1989-10-04',
+	emp_password = '1234',
+	emp_email = 'kim@blue.com', 
+	emp_off_total = 17, 
+	emp_off_remain = 14.5, 
+	emp_off_use = 2.5, 
+ emp_confirm = 'Y', 
+	emp_step = 2, 
+	emp_regdate = now();
+
+INSERT INTO employee SET 
+	emp_department = '400',
+	emp_position = '07',
+	emp_num ='05094005',
+	emp_enter = '2019-09-21',
+	emp_name = '강이사',
+	emp_birth = '1977-11-04',
+	emp_password = '1234',
+	emp_email = 'kang@blue.com',
+	emp_regdate = now(), 
+	emp_step = 2,  
+ emp_off_total = 16, 
+	emp_off_remain = 16, 
+	emp_off_use = 0, 
+	emp_confirm = 'Y';
+
+INSERT INTO employee SET 
+	emp_department = '500',
+	emp_position = '01',
+	emp_num ='20095006',
+	emp_enter = '2020-01-10',
+	emp_name = '신사원',
+	emp_birth = '1999-11-05',
+	emp_password = '1234',
+	emp_email = 'shin@blue.com', 
+	emp_step = 1, 
+ emp_off_total = 12, 
+	emp_off_remain = 12, 
+	emp_off_use = 0, 
+ emp_confirm = 'Y',
+	emp_regdate = now();
+
+INSERT INTO employee SET 
+	emp_department = '600',
+	emp_position = '08',
+	emp_num ='02046007',
+	emp_enter = '2002-04-10',
+	emp_name = '정상무',
+	emp_birth = '1972-05-05',
+	emp_password = '1234',
+	emp_email = 'jeong@blue.com', 
+	emp_step = 19, 	
+ emp_off_total = 225, 
+	emp_off_remain = 225, 
+	emp_off_use = 0, 
+ emp_confirm = 'Y',
+	emp_regdate = now();
+
+INSERT INTO employee SET 
+	emp_department = '800',
+	emp_position = '01',
+	emp_num ='20116008',
+	emp_enter = '2020-11-10',
+	emp_name = '하사원',
+	emp_birth = '2000-10-05',
+	emp_password = '1234',
+	emp_email = 'ha@blue.com', 
+	emp_step = 1, 	
+ emp_off_total = 2, 
+	emp_off_remain = 2, 
+	emp_off_use = 0, 
+ emp_confirm = 'Y',
+	emp_regdate = now();
+
+INSERT INTO employee SET 
+	emp_department = '900',
+	emp_position = '10',
+	emp_num ='01019009',
+	emp_enter = '2001-01-01',
+	emp_name = '부사장',
+	emp_birth = '2000-10-05',
+	emp_password = '1234',
+	emp_email = 'bu@blue.com',
+	emp_step = 20, 
+ emp_off_total = 240, 
+	emp_off_remain = 240, 
+	emp_off_use = 0, 
+ emp_confirm = 'Y',
+	emp_regdate = now();
+
+INSERT INTO employee SET 
+	emp_department = '700',
+	emp_position = '06',
+	emp_num ='100770010',
+	emp_enter = '2010-07-21',
+	emp_name = '위부장',
+	emp_birth = '1975-10-22',
+	emp_password = '1234',
+	emp_email = 'wee@blue.com', 
+	emp_step = 11, 
+ emp_off_total = 126, 
+	emp_off_remain = 126, 
+	emp_off_use = 0, 
+ emp_confirm = 'Y',
+	emp_regdate = now();
+
+INSERT INTO employee SET 
+	emp_department = '000',
+	emp_position = '05',
+	emp_num ='140200011',
+	emp_enter = '2014-02-04',
+	emp_name = '민차장',
+	emp_birth = '1981-06-22',
+	emp_password = '1234',
+	emp_email = 'min@blue.com',
+	emp_step = 7, 
+ emp_off_total = 83, 
+	emp_off_remain = 83, 
+	emp_off_use = 0, 
+ emp_confirm = 'Y',
+	emp_regdate = now();
+	
+INSERT INTO employee SET 
+	emp_department = '400',
+	emp_position = '02',
+	emp_num ='180540012',
+	emp_enter = '2018-05-04',
+	emp_name = '김영희',
+	emp_birth = '1990-11-22',
+	emp_password = '1234',
+	emp_step = 3, 
+	emp_email = 'yhkim@blue.com', 
+ emp_off_total = 32, 
+	emp_off_remain = 32, 
+	emp_off_use = 0, 
+ emp_confirm = 'Y',
+	emp_regdate = now();
+
+INSERT INTO employee SET 
+	emp_department = '100',
+	emp_position = '06',
+	emp_num ='120310013',
+	emp_enter = '2012-03-05',
+	emp_name = '인사부',
+	emp_birth = '1978-08-07',
+	emp_password = '1234',
+	emp_email = 'insa@blue.com',
+	emp_off_total = 106, 
+	emp_off_remain = 106, 
+	emp_off_use = 0, 
+ emp_confirm = 'Y',
+	emp_step = 9, 
+	emp_regdate = now();
+
+INSERT INTO employee SET 
+	emp_department = '200',
+	emp_position = '01',
+	emp_num ='200120014',
+	emp_enter = '2020-01-01',
+	emp_name = '손직원',
+	emp_birth = '1995-08-08',
+	emp_password = '1234',
+	emp_email = 'son@blue.com',
+	emp_confirm = 'Y', 
+	emp_off_total = 12, 
+	emp_off_remain = 7.5, 
+	emp_off_use = 4.5, 
+	emp_step = 1, 
+	emp_regdate = now();
+	
+
+INSERT INTO employee SET 
+	emp_department = '300',
+	emp_position = '07',
+	emp_num ='200130015',
+	emp_enter = '2020-01-01',
+	emp_name = '진실로',
+	emp_birth = '1977-07-08',
+	emp_password = '1234',
+	emp_email = 'jin@blue.com',
+	emp_off_total = 12, 
+	emp_off_remain = 12, 
+	emp_off_use = 0, 
+ emp_confirm = 'Y',
+	emp_step = 1, 
+	emp_regdate = now();
+
+
+INSERT INTO employee SET 
+	emp_department = '500',
+	emp_position = '01',
+	emp_num ='200150016',
+	emp_enter = '2020-01-01',
+	emp_name = '오해영',
+	emp_birth = '1993-09-09',
+	emp_password = '1234',
+	emp_email = 'oh@blue.com',
+	emp_confirm = 'Y', 
+	emp_off_total = 12, 
+	emp_off_remain = 10.5, 
+	emp_off_use = 1.5, 
+	emp_step = 1, 
+	emp_regdate = now();
+
+
+INSERT INTO employee SET 
+	emp_department = '600',
+	emp_position = '01',
+	emp_num ='200160017',
+	emp_enter = '2020-01-01',
+	emp_name = '송사리',
+	emp_birth = '1996-01-09',
+	emp_password = '1234',
+	emp_email = 'song@blue.com',
+	emp_confirm = 'Y', 
+	emp_off_total = 12, 
+	emp_off_remain = 10, 
+	emp_off_use = 2, 
+	emp_step = 1, 
+	emp_regdate = now();
 
 INSERT INTO employee SET 
 emp_department = '000',
@@ -845,6 +1104,9 @@ emp_step = 9,
 emp_confirm = 'Y',
 emp_auth = 9,
 emp_headcheck = 'Y',
+emp_off_total = 106,
+emp_off_remain = 106,
+emp_off_use = 0,
 emp_regdate = now();
 
 INSERT INTO employee SET 
@@ -860,6 +1122,9 @@ emp_step = 9,
 emp_confirm = 'Y',
 emp_auth = 9,
 emp_headcheck = 'Y',
+emp_off_total = 106,
+emp_off_remain = 106,
+emp_off_use = 0,
 emp_regdate = now();
 
 INSERT INTO employee SET 
@@ -875,6 +1140,9 @@ emp_step = 9,
 emp_confirm = 'Y',
 emp_auth = 9,
 emp_headcheck = 'Y',
+emp_off_total = 106,
+emp_off_remain = 106,
+emp_off_use = 0,
 emp_regdate = now();
 
 INSERT INTO employee SET 
@@ -890,6 +1158,9 @@ emp_step = 9,
 emp_confirm = 'Y',
 emp_auth = 9,
 emp_headcheck = 'Y',
+emp_off_total = 106,
+emp_off_remain = 106,
+emp_off_use = 0,
 emp_regdate = now();
 
 INSERT INTO employee SET 
@@ -905,6 +1176,9 @@ emp_step = 9,
 emp_confirm = 'Y',
 emp_auth = 9,
 emp_headcheck = 'Y',
+emp_off_total = 106,
+emp_off_remain = 106,
+emp_off_use = 0,
 emp_regdate = now();
 
 INSERT INTO employee SET 
@@ -920,6 +1194,9 @@ emp_step = 9,
 emp_confirm = 'Y',
 emp_auth = 9,
 emp_headcheck = 'Y',
+emp_off_total = 106,
+emp_off_remain = 106,
+emp_off_use = 0,
 emp_regdate = now();
 
 INSERT INTO employee SET 
@@ -935,6 +1212,9 @@ emp_step = 9,
 emp_confirm = 'Y',
 emp_auth = 9,
 emp_headcheck = 'Y',
+emp_off_total = 106,
+emp_off_remain = 106,
+emp_off_use = 0,
 emp_regdate = now();
 
 INSERT INTO employee SET 
@@ -950,6 +1230,9 @@ emp_step = 9,
 emp_confirm = 'Y',
 emp_auth = 9,
 emp_headcheck = 'Y',
+emp_off_total = 106,
+emp_off_remain = 106,
+emp_off_use = 0,
 emp_regdate = now();
 
 INSERT INTO employee SET 
@@ -965,6 +1248,9 @@ emp_step = 9,
 emp_confirm = 'Y',
 emp_auth = 9,
 emp_headcheck = 'Y',
+emp_off_total = 106,
+emp_off_remain = 106,
+emp_off_use = 0,
 emp_regdate = now();
 
 INSERT INTO employee SET 
@@ -980,6 +1266,9 @@ emp_step = 9,
 emp_confirm = 'Y',
 emp_auth = 9,
 emp_headcheck = 'Y',
+emp_off_total = 106,
+emp_off_remain = 106,
+emp_off_use = 0,
 emp_regdate = now();
 
 create table employee_detail (
